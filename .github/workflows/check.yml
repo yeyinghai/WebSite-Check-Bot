@@ -25,6 +25,7 @@ jobs:
         with:
           node-version: '18' # 使用 Node.js 18.x 版本
           cache: 'npm' # 缓存 npm 依赖，加快后续构建速度
+          cache-dependency-path: './subdir/package-lock.json'
 
       # 第三步：安装项目依赖
       - name: 安装依赖
