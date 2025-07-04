@@ -1,0 +1,39 @@
+name: Website Status Check
+
+# 触发器配置
+on:
+  schedule:
+    # 定义定时任务：每 15 分钟运行一次。
+    # cron 语法: 分 时 日 月 周
+    - cron: '*/15 * * * *'
+  # 允许在 GitHub Actions 页面手动触发此工作流
+  workflow_dispatch:
+
+jobs:
+  check:
+    # 在最新的 Ubuntu 虚拟机上运行
+    runs-on: ubuntu-latest
+
+    steps:
+      # 第一步：检出你的仓库代码
+      - name: 检出代码
+        uses: actions/checkout@v3
+
+      # 第二步：设置 Node.js 运行环境
+      - name: 设置 Node.js 环境
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # 使用 Node.js 18.x 版本
+          cache: 'npm' # 缓存 npm 依赖，加快后续构建速度
+
+      # 第三步：安装项目依赖
+      - name: 安装依赖
+        run: npm install
+
+      # 第四步：运行网站检查脚本
+      - name: 运行检查脚本
+        run: node index.js
+        env:
+          # 从 GitHub Secrets 中读取配置，这样更安全
+          CHECK_URLS: ${{ secrets.CHECK_URLS }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
