@@ -16,7 +16,7 @@
 
 1.  **克隆仓库**
     ```bash
-    git clone [https://github.com/your-username/site-check-bot.git](https://github.com/your-username/site-check-bot.git)
+    git clone [https://github.com/yeyinghai/Site-Check-Bot.git](https://github.com/yeyinghai/Site-Check-Bot.git)
     cd site-check-bot
     ```
 
