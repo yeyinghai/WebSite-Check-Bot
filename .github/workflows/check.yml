@@ -3,9 +3,9 @@ name: Website Status Check
 # 触发器配置
 on:
   schedule:
-    # 定义定时任务：每 15 分钟运行一次。
+    # 定义定时任务：每23小时 15 分钟运行一次。
     # cron 语法: 分 时 日 月 周
-    - cron: '*/15 * * * *'
+    - cron: '*/15 23 * * *'
   # 允许在 GitHub Actions 页面手动触发此工作流
   workflow_dispatch:
 
