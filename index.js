@@ -92,9 +92,9 @@ async function main() {
   } else {
     console.log("🎉 所有网站运行正常！");
     // 如果您希望所有网站正常时也收到通知，取消下面的注释
-    // const title = "✅ 所有网站运行正常";
-    // const description = `已成功检查 ${upSites.length} 个网站，一切正常。`;
-    // await sendDiscordNotification(title, description, 5763719); // 绿色
+     const title = "✅ 所有网站运行正常";
+     const description = `已成功检查 ${upSites.length} 个网站，一切正常。`;
+     await sendDiscordNotification(title, description, 5763719); // 绿色
   }
 
   console.log("✨ 检查完成。");
