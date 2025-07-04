@@ -1,0 +1,24 @@
+{
+  "name": "site-check-bot",
+  "version": "1.0.0",
+  "description": "A simple Node.js bot to monitor website status and send notifications.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "monitoring",
+    "automation",
+    "website",
+    "status",
+    "bot",
+    "discord"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5"
+  }
+}
