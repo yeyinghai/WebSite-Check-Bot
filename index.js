@@ -44,10 +44,10 @@ async function checkWebsite(url) {
 
 /**
  * 发送通知到 Discord
+ * @param {string} title - 消息标题
+ * @param {string} description - 消息描述
+ * @param {string} color - 消息颜色 (十进制)
  */
- @param {string} title - 消息标题
- @param {string} description - 消息描述
- @param {string} color - 65280
 async function sendDiscordNotification(title, description, color) {
   try {
     await axios.post(webhookUrl, {
